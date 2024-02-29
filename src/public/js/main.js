@@ -56,7 +56,7 @@ const addProduct = () => {
         status:document.getElementById('productStatus').value === 'true',
     }
 
-    if(!product.title || !product.description || !product.price || !product.thumbnails || !product.code || !product.stock) {
+    if(!product.title || !product.description || !product.price || !product.thumbnail || !product.code || !product.stock) {
         console.log(`Please fill all the fields`)
         return
     }
