@@ -60,6 +60,18 @@ const addProduct = () => {
         console.log(`Please fill all the fields`)
         return
     }
+    if (isNaN(product.price) || isNaN(product.stock)) {
+        console.log(`Price and stock must be numbers`)
+        return
+    }
+    if (product.price <= 0 || product.stock <= 0) {
+        console.log(`Price and stock must be greater than 0`)
+        return
+    }
+    if (product.status !== true && product.status !== false) {
+        console.log(`Status must be true or false`)
+        return
+    }
     socket.emit('addProduct', product)
     console.log(product)
 }
