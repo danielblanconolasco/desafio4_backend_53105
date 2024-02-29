@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Real Time</h1>
+            <h2>Products:</h2>
+        </div>
+        <div class="row row-cols-2 row-cols-md-4 g-4" id="products-container">
+        </div>
+        <div class="col-12 mb-3">
+            <hr>
+            <h2>Add products</h2>
+
+            <div class="mb-3">
+                <label for="productTitle" class="form-label">Title</label>
+                <input type="text" class="form-control" id="productTitle" placeholder="Nice title here" required>
+            </div>
+            <div class="mb-3">
+                <label for="productDescription" class="form-label">This is the text description. Keep in mind to keep it simple.</label>
+                <textarea class="form-control" id="productDescription" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="productPrice" class="form-label"></label>
+                <input type="number" class="form-control" id="productPrice" placeholder="Price">
+            </div>
+            <div class="mb-3">
+                <label for="productThumbnails" class="form-label">Thumbnails</label>
+                <input type="text" class="form-control" id="productThumbnails" placeholder="https://www.example.com/image.jpg, https://www.example.com/image2.jpg">
+            </div>
+            <div class="mb-3">
+                <label for="productCode" class="form-label">Code</label>
+                <input type="text" class="form-control" id="productCode" placeholder="Product code">
+            </div>
+            <div class="mb-3">
+                <label for="productStock" class="form-label">Stock</label>
+                <input type="number" class="form-control" id="productStock" placeholder="Stock">
+            </div>a
+            <div class="mb-3">
+                <label for="productStatus" class="form-label">Status</label>
+                <select class="form-select" id="productStatus">
+                    <option value="true" selected>Available</option>
+                    <option value="false">Not available</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <hr>
+            <button type="button" class="btn btn-primary" id="addProduct">Add product</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+<script src="js/main.js" type="module"></script>
