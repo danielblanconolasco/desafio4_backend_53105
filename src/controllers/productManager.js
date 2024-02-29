@@ -25,6 +25,7 @@ class ProductManager {
             const nextId = lastProduct.id + 1
 
             const existingProduct = existingProducts.find(product => product.code === newProduct.code)
+
             if (existingProduct) {
                 console.log(`Product with the same code ${newProduct.code} already exists, please try again`)
                 return 
