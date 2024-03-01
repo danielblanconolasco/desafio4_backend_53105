@@ -118,14 +118,5 @@
     "code": "microphone-1",
     "stock": 10,
     "status": true
-  },
-  {
-    "id": 13,
-    "title": "1",
-    "description": "1",
-    "price": "1",
-    "code": "1",
-    "stock": "1",
-    "status": true
   }
 ]
