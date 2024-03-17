@@ -30,16 +30,6 @@
     "status": true
   },
   {
-    "id": 4,
-    "title": "Headphones",
-    "description": "A nice headphone",
-    "price": 200,
-    "thumbnails": "./assets/img/headphones1.jpg",
-    "code": "headphones-1",
-    "stock": 10,
-    "status": true
-  },
-  {
     "id": 5,
     "title": "Desktop",
     "description": "A nice desktop",

@@ -1,9 +1,11 @@
 import express from 'express'
 const router = express.Router()
-import ProductManager from '../controllers/productManager.js'
+import ProductManager from "../controllers/products-manager-db.js"
+import ProductModel from "../models/product.model.js"
 
 // Calling an instance for router to work
 const productManager = new ProductManager
+const productModel = new ProductModel()
 
 // Products Router
 router.get('/', async (req, res) => {
@@ -24,10 +26,12 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('/:id', async (req, res) => {
+router.get('/:pid', async (req, res) => {
+    const id = req.params.pid
+
     try {
-        const id = parseInt(req.params.id)
         const product = await productManager.getProductById(id)
+
         if (product) {
             res.status(200).send(product)
         } else {
@@ -39,11 +43,11 @@ router.get('/:id', async (req, res) => {
 })
 
 router.put('/:id', async (req, res) => {
+    const id = req.params.id
+    const updateProduct = req.body
     try {
-        const id = parseInt(req.params.id)
-        let newProduct = req.body
-        const updatedProduct = await productManager.updateProductById(id, newProduct)
-        if (updatedProduct) {
+        await productManager.updateProduct(id, updateProduct)
+        if (updateProduct) {
             res.status(200).send(`Product ID ${id} updated`)
         } else {
             res.status(404).send(`Product ID ${id} not found`)
@@ -72,7 +76,7 @@ router.post(`/`, async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try {
         const id = parseInt(req.params.id)
-        const deletedProduct = await productManager.deleteProductById(id)
+        const deletedProduct = await productManager.deleteProduct(id)
         if (deletedProduct) {
             res.status(200).send(`Product ID ${id} deleted`)
         } else {

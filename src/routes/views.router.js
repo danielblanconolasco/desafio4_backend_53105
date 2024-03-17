@@ -1,6 +1,6 @@
 import express from 'express'
 const router =  express.Router()
-import ProductManager from '../controllers/productManager.js'
+import ProductManager from '../controllers/products-manager-db.js'
 
 // Calling an instance for router to work
 const productManager = new ProductManager
@@ -30,5 +30,14 @@ try {
     console.log('Error getting products on real time products', error)
 }
 })
+
+router.get('/chat', (req,res) =>{
+    try {
+        res.render('chat')
+    } catch (error) {
+        console.log('Error getting chat', error)
+    }
+})
+
 
 export default router
